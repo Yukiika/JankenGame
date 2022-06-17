@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>じゃんけん</title>
+<script type="text/javascript" src="judgement.js"></script>
+<script type="text/javascript">
+
+
+
+// 確認ダイアログを表示し、「いいえ」の時はボタンを無効化する
+function init(){
+	if(!confirm("ジャンケンしますか？")){
+		document.getElementById("btnG").disabled = true;
+		document.getElementById("btnC").disabled = true;
+		document.getElementById("btnP").disabled = true;
+	}
+}
+//じゃんけんの結果を表示する
+function myChoice(jankenUser){
+	var strLocal = myResult(jankenUser)
+	alert(strLocal);
+}
+</script>
+<noscript>
+JavaScriptが無効になっています。有効にしてください。
+</noscript>
+</head>
+<body onload="init()">
+<form name="forml">
+<input type="button" id="btnG" onclick="myChoice(0)" value="グー">
+<input type="button" id="btnC" onclick="myChoice(1)" value="チョキ">
+<input type="button" id="btnP" onclick="myChoice(2)" value="パー">
+</form>
+</body>
+
+</html>
